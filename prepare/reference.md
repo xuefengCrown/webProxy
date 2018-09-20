@@ -12,4 +12,6 @@
 
 [5](https://github.com/zyearn/csapp-lab-2e/tree/master/proxylab-handout)
 
+[Test Proxy With Netcat](https://www.keblog.me/2014/12/writing-proxy-lab-csapp/)
+
 [rm](http://www.runningmanzx.com/shipin/RunningMan2016/index.html)
