@@ -22,8 +22,8 @@ static const char *user_agent_hdr = "User-Agent: Mozilla/5.0 (X11; Linux x86_64;
 
 int main()
 {
-	int listenfd; // 监听描述符 
-	int *connfd; // 已连接描述符
+    int listenfd; // 监听描述符 
+    int *connfd; // 已连接描述符
     char hostname[MAXLINE], port[MAXLINE];
     socklen_t clientlen;
     struct sockaddr_storage clientaddr;
@@ -61,6 +61,7 @@ void *thread(void *vargp){
 	Close(connfd);
 	return NULL;
 }
+
 /*
 代理和web服务器的异同是什么：
 1. 都需要接收客户端发送来的HTTP请求；都需要解析HTTP请求行。代理解析请求行时，
@@ -167,7 +168,7 @@ void build_request_header(char *proxy_req_header, char *hostname, char *path, in
             strcpy(host_header,buf);
 		}else if(strncasecmp("Connection", buf, strlen("Connection")) 
             && strncasecmp("Proxy-Connection", buf, strlen("Proxy-Connection"))
-            && !strncasecmp("User-Agent", buf, strlen("User-Agent"))){
+            && strncasecmp("User-Agent", buf, strlen("User-Agent"))){
 			strcat(other_header, buf);
 		}
 	}
